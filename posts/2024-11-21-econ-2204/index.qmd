@@ -1,0 +1,12 @@
+---
+title: "Lukes first blog post"
+description: "practice making some posts yay"
+author: 
+  - name: Luke Hiebert
+  - affliliation: Departement of Economics, U of W
+  - sffiliation_url: https://www.uwinnipeg.ca/economics/
+categories: [Quarto, R, Data Analysis]
+  #url: https://lukehiebert.github.io/Website/
+# image:
+draft: false
+---
