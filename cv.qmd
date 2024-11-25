@@ -6,9 +6,24 @@ Click [here](files/cv.pdf) Want to add working link in the future
 
 # Contact Information
 
+{{< fa envelope >}}
+<a href="mailto:luke15hiebert@gmial.com" >
+  <i class="fas fa-envelope"></i>
+</a>
+
+{{< fa brands twitter >}}
+
+<a href="https://x.com/LukeHiebert3" target="_blank">
+  <i class="fab fa-twitter"></i>
+</a>
+
+
+
 luke15hiebert\@gmail.com
 
 (204) 794-1163
+
+
 
 # Education
 

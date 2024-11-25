@@ -16,10 +16,11 @@ website:
     right: 
       - href: contact.qmd
         text: Contact me
-
+      
 format:
   html:
-    theme: cosmo
+    theme: default
+    fontawesome: true
     css: styles.css
     toc: true
 
