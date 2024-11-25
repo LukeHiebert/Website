@@ -13,6 +13,9 @@ website:
         text: CV
       - href: posts.qmd
         text: Blog
+    right: 
+      - href: contact.qmd
+        text: Contact me
 
 format:
   html:

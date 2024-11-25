@@ -6,7 +6,9 @@ author:
   - affliliation: Departement of Economics, U of W
   - sffiliation_url: https://www.uwinnipeg.ca/economics/
 categories: [Quarto, R, Data Analysis]
-  #url: https://lukehiebert.github.io/Website/
-# image:
+citation: 
+  url: https://lukehiebert.github.io/Website/posts/2024-11-21-econ-2204/
 draft: false
 ---
+
+# My First Post

@@ -1,0 +1,105 @@
+---
+title: "A5 blog post"
+---
+random histo plot
+
+(1) In this question you will be fitting gamma distribution to the hearts of cats data available in the nexus. The dataset has three variables. Sex: "F" and "M"; Bwt: body weights in kg. and Hwt: heart weights in g.
+
+(a) Download the data from the nexus and upload in your RMarkdown using appropriate working directory
+
+```{r}
+## moved data to csv format because the file was downloading as text
+data <- read.csv("cats.csv")
+head(data)
+```
+
+(b) Calculate the mean and standard deviation of the heart weights.
+
+```{r}
+cats_mean_Hwt <- mean(data$Hwt)
+cats_mean_Hwt
+
+cats_sigma_Hwt <- sd(data$Hwt) 
+cats_sigma_Hwt
+```
+
+(c) Using the mean and standard deviation in part (b), compute the estimated values of parameters α and β and print the results as a single vector.
+
+```{r}
+
+alpha <- (cats_mean_Hwt^2)/(cats_sigma_Hwt^2)
+alpha
+
+beta <- (cats_sigma_Hwt^2)/cats_mean_Hwt
+beta
+```
+
+(d) Write an R function est.gamma() which takes as input a vector of numbers and calculates the mean and variance and returns the estimate of α and β.
+
+
+```{r}
+est.gamma <- function(x){
+  
+  n = length(x)
+  
+  x_bar = sum(x)/n
+  
+  var_x = (1/(n - 1)) * sum((x - x_bar)^2)
+  
+  alpha_gamma = (x_bar^2)/var_x
+  
+  beta_gamma = var_x/x_bar
+  
+  print(c(alpha_gamma, beta_gamma))
+}
+```
+
+(e) What estimates do you get on the cats’ heart weight using the function est.gamma() in part (d). Compare the results with the part (c).
+
+```{r}
+estimate_est <- est.gamma(data$Hwt)
+estimate_est
+```
+
+
+*These results are the same as those in part c. This is because fundamentally, the formula is the same. However, with the loop, we are able to apply the function est.gamma to different values of x.*
+
+(f) Use the estimated values of parameters in part (e) and simulate 100 Hwt using the function rgamma() and print the head of the samples. [Note: use set.seed(1234) for the reproducibility.]
+
+```{r}
+set.seed(1234)
+
+estimate_r <- rgamma(100, shape = alpha, scale = beta)
+head(estimate_r)
+```
+
+(g) Calculate mean and standard deviation for the samples in part (f) and compared with the results in part (a). Do you observe any differences? What are the reasons?
+
+```{r}
+r_mean <- mean(estimate_r)
+r_mean
+
+r_sigma <- sd(estimate_r)
+r_sigma
+```
+*These results are different from those in part b. This is because the formula (assuming the seed is not set) set 100 as an n number of values, therefore resulting in variation depending on what values the 100 n take on. Conversely, part b directly uses the datas values.*
+
+Plot the histogram for the simulated data in part (f). Add densities for both simulated data and the observed data on top of the histogram. Separate the density curves by color and and represent them by the legend.
+
+```{r}
+hist(estimate_r, 
+     probability = TRUE,
+     main = "Simulated Histogram Plot")
+
+lines(density(estimate_r),
+     col = "red",
+     main = "Simulated Density Plot")
+
+lines(density(data$Hwt),
+     col = "blue",
+     main = "Observed Density Plot")
+
+legend("topright", c("Simulated Density Plot", "Observed Density Plot"),
+       col = c("red", "blue"), pch = c(16,17))
+
+```
