@@ -1,5 +1,14 @@
 ---
 title: "A5 blog post"
+description: "Blog post for A5"
+author: 
+  - name: Luke Hiebert
+  - affliliation: Departement of Economics, U of W
+  - sffiliation_url: https://www.uwinnipeg.ca/economics/
+categories: [Quarto, R, Data Analysis]
+citation: 
+  url: https://lukehiebert.github.io/Website/posts/2024-11-25-a5/
+draft: false
 ---
 random histo plot
 
