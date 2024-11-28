@@ -6,11 +6,11 @@ title: "Contact"
 
 # Phone number
 
-(204) 794-1163
+\(204\) 794-1163
 
 # Email
 
-luke15hiebert\@gmail.com
+[luke15hiebert@gmail.com](mailto:luke15hiebert@gmail.com)
 
 
 

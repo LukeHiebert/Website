@@ -6,8 +6,6 @@ Click [here](files/cv.pdf) Want to add working link in the future
 
 # Contact Information
 
-{{< fa envelope >}}
-
 <a href="mailto:luke15hiebert@gmial.com" >
   <i class="fas fa-envelope"></i>
 </a>

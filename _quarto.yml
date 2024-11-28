@@ -15,7 +15,8 @@ website:
         text: Blog
     right: 
       - href: contact.qmd
-        text: Contact me
+        text: "{{< fa envelope >}}"
+
       
 format:
   html:
